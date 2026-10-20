@@ -1,3 +1,5 @@
 test/**
 .vscode/**
 *.vsix
+.github/**
+.gitignore
