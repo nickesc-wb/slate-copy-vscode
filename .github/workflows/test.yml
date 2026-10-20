@@ -1,7 +1,7 @@
 name: Test
 
-# Pushes to main are tested by the release workflow.
 on:
+  push:
   pull_request:
 
 jobs:
