@@ -1,0 +1,51 @@
+{
+  "name": "copy-for-slate",
+  "displayName": "Copy for Slate",
+  "description": "Copy JS, CSS, or HTML wrapped in a Slate-ready HTML document.",
+  "version": "0.1.0",
+  "publisher": "waybetter",
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyForSlate.copy",
+        "title": "Copy for Slate",
+        "icon": "$(clippy)"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "copyForSlate.copy",
+          "when": "resourceLangId =~ /^(javascript|css|html)$/",
+          "group": "navigation@100"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "copyForSlate.copy",
+          "when": "resourceLangId =~ /^(javascript|css|html)$/",
+          "group": "9_cutcopypaste@100"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "copyForSlate.copy",
+          "when": "editorLangId =~ /^(javascript|css|html)$/"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "test": "node test/wrap.test.js",
+    "package": "npx --yes @vscode/vsce package --allow-missing-repository"
+  }
+}
